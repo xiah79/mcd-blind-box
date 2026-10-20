@@ -5,6 +5,15 @@
 
 **M-CODE 麦当劳程序员创意开发大赛参赛作品**
 
+<p align="center">
+  <img src="docs/screenshot-blind-box.svg" alt="mcd-blind-box 真实开盒输出示例" width="460">
+</p>
+
+> 上图为**一次真实开盒输出**（门店 1450713 / 菜单 `query-meals` / 积分 `query-lottery-info` / 活动 `campaign-calendar`，2026-10-20 实测数据渲染，无任何模拟值）。
+> 注意抽奖那一段——**扣积分前它停下来问你**，这是本项目的设计底线。
+
+**一句话**：说一句话就出餐，AI 自己定位、自己抽签、自己给惊喜——但绝不编造你的位置，绝不擅自扣你的积分。
+
 ---
 
 ## 一、它做什么
@@ -98,10 +107,14 @@ Buddy：记下了，以后抽签帮你避开辣味的。要更新忌口随时说
 ```
 mcd-blind-box/
 ├── README.md                   # 本文件（项目介绍 / 安装方法 / 使用示例 / 目标用户）
-├── CONTEST_DECLARATION.md# 参赛声明（原创性 / 合规性 / 敏感信息）
+├── CONTEST_DECLARATION.md# 参赛声明（官方原文，内容不可修改）
 ├── MCP_INTEGRATION.md          # MCP Server、Tool、调用流程、业务价值
 ├── mcp-config.example.json     # ✅ 唯一正确的 MCP 配置模板（仅 ${MCD_MCP_TOKEN} 占位符）
 ├── workbuddy.md                # WorkBuddy 完整开发对话（专项奖励必需）
+├── docs/
+│   ├── screenshot-blind-box.svg# 开盒输出示例图（真实数据渲染）
+│   ├── AI_USAGE_STATEMENT.md   # AI 使用说明与问题披露（补充材料）
+│   └── CONTEST_DECLARATION.custom.md  # 早期自定义声明存档（已被官方版取代）
 ├── TEST_REPORT_FINAL.md        # 最终测试报告（含全部实测数据）
 ├── TEST_REPORT.md              # 首轮测试报告（存档）
 ├── TEST_REPORT_MEMORY.md       # 记忆模块专项报告（存档）

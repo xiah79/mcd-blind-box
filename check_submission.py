@@ -208,6 +208,41 @@ def main():
         print("    [缺失] mcp-config.example.json")
     print()
 
+    # 4b. 官方文件完整性校验
+    print("[4b] 官方文件内容完整性校验")
+    decl_path = os.path.join(root, "CONTEST_DECLARATION.md")
+    if os.path.isfile(decl_path):
+        with open(decl_path, "r", encoding="utf-8") as f:
+            decl = f.read()
+        # 官方原文必须包含的 5 个章节标题
+        required_sections = [
+            "## 原创性声明",
+            "## 合规声明",
+            "## 信息安全声明",
+            "## 使用提示",
+            "## 规则遵守声明",
+        ]
+        missing = [s for s in required_sections if s not in decl]
+        if missing:
+            ok = False
+            print(f"    [错误] CONTEST_DECLARATION.md 缺少官方章节: {missing}")
+            print("           官方要求「文件内容不可修改」，请从官方仓库恢复原文：")
+            print("           https://github.com/M-China/mcd-developer-innovation-challenge/blob/main/CONTEST_DECLARATION.md")
+        else:
+            # 校验没有夹带自定义内容
+            custom_markers = ["参赛人签字", "**项目名称**", "GitHub 仓库地址", "_____"]
+            polluted = [m for m in custom_markers if m in decl]
+            if polluted:
+                ok = False
+                print(f"    [错误] CONTEST_DECLARATION.md 含自定义内容: {polluted}")
+                print("           官方要求内容不可修改，请恢复为官方原文")
+            else:
+                print("    [OK  ] CONTEST_DECLARATION.md 与官方原文一致（5 章节齐全，无夹带）")
+    else:
+        ok = False
+        print("    [缺失] CONTEST_DECLARATION.md")
+    print()
+
     # 5. 双份副本同步检查
     print("[5] 项目级副本 vs 用户级生效版本 同步检查")
     user_skill_dir = os.path.expanduser("~/.workbuddy/skills/mcd-blind-box")

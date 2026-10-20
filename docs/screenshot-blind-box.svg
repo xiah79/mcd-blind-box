@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="1000" viewBox="0 0 720 1000" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB',sans-serif">
+  <rect width="720" height="1000" fill="#F7F5F0"/>
+
+  <rect x="40" y="36" width="640" height="928" rx="18" fill="#FFFFFF" stroke="#E3DFD5" stroke-width="1"/>
+
+  <text x="76" y="88" font-size="15" fill="#8A8578">今天手气如何？帮我开盒</text>
+  <text x="76" y="132" font-size="20" font-weight="500" fill="#1F1D18">咔哒——你的麦当劳盲盒已开箱！</text>
+
+  <line x1="76" y1="160" x2="644" y2="160" stroke="#EDE9DF" stroke-width="1"/>
+
+  <text x="76" y="192" font-size="12" fill="#8A8578">抽签地点</text>
+  <text x="76" y="216" font-size="14" fill="#1F1D18">上海 · 麦当劳上海黄浦华旭国际大厦餐厅</text>
+  <text x="76" y="238" font-size="12" fill="#A8A296">南京东路街道西藏中路336号 · 营业中 00:00–23:59</text>
+
+  <text x="76" y="274" font-size="12" fill="#8A8578">地标等级</text>
+  <text x="76" y="298" font-size="14" fill="#1F1D18">上海市中心核心商圈 · 黄金地标</text>
+
+  <text x="76" y="334" font-size="12" fill="#8A8578">主题彩蛋</text>
+  <text x="76" y="358" font-size="14" fill="#1F1D18">麦当劳 X PEACEMINUSONE · GD 同款联名复古棒球帽</text>
+
+  <text x="76" y="394" font-size="12" fill="#8A8578">盲盒主食</text>
+  <text x="76" y="418" font-size="14" fill="#1F1D18">龙焰芝士棒鸡腿堡三件套 ¥29.9（原价 ¥50.5）</text>
+  <text x="76" y="440" font-size="14" fill="#1F1D18">汪苏泷联名旋旋星愿贴 ¥3.9</text>
+  <text x="76" y="462" font-size="12" fill="#A8A296">芝士热时双倍拉丝，配一张联名贴纸刚刚好</text>
+
+  <rect x="76" y="488" width="568" height="72" rx="10" fill="#F5F2EA"/>
+  <text x="96" y="514" font-size="13" font-weight="500" fill="#1F1D18">收录进度</text>
+  <text x="96" y="540" font-size="12" fill="#6E6A5F">第 7 盒 · 已集 13/26 种 · 新收录</text>
+
+  <text x="76" y="592" font-size="12" fill="#A8A296">虽然 AI 无法知道你此刻的真实坐标，但这不妨碍我们开启这段盲盒之旅——</text>
+  <text x="76" y="612" font-size="12" fill="#A8A296">先把上海市中心这家宝藏门店抽给你，回头你告诉我它离你远不远，够近的话这盒就圆满了。</text>
+
+  <line x1="76" y1="640" x2="644" y2="640" stroke="#EDE9DF" stroke-width="1"/>
+
+  <text x="76" y="674" font-size="13" font-weight="500" fill="#1F1D18">隐藏彩蛋 · 老规矩先问</text>
+  <text x="76" y="700" font-size="13" fill="#1F1D18">本次抽奖消耗 24 积分，你当前 170 分，抽完还剩 146。</text>
+  <text x="76" y="722" font-size="13" fill="#1F1D18">奖品池：双层鳕鱼三件套 6 折券、麦旋风 5 折券、板烧三件套 5 折券……</text>
+  <text x="76" y="752" font-size="12" fill="#A8A296">扣积分是真金白银，我不替你按。说「抽」我就动手。</text>
+
+  <rect x="76" y="784" width="568" height="1" fill="#EDE9DF"/>
+  <text x="76" y="816" font-size="12" fill="#B0AA9C">mcd-blind-box · 基于麦当劳 MCP 的 WorkBuddy Skill</text>
+  <text x="76" y="838" font-size="12" fill="#B0AA9C">https://github.com/xiah79/mcd-blind-box</text>
+
+  <text x="76" y="896" font-size="12" fill="#8A8578">读图提示：以下为本次真实接口数据渲染，未使用任何模拟值</text>
+  <text x="76" y="918" font-size="12" fill="#8A8578">门店 1450713 · 菜单 query-meals · 积分 query-lottery-info · 活动 campaign-calendar</text>
+</svg>
