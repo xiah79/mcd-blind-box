@@ -1,0 +1,15 @@
+# 统一换行符：仓库内用 LF，检出时按平台自动转换
+* text=auto eol=lf
+
+# Windows 上强制 LF，避免 diff 噪声
+*.md text eol=lf
+*.py text eol=lf
+*.json text eol=lf
+*.txt text eol=lf
+
+# 二进制文件不做转换
+*.png binary
+*.jpg binary
+*.gif binary
+*.ico binary
+*.pdf binary

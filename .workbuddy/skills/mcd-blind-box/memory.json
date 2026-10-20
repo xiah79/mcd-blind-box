@@ -1,0 +1,80 @@
+{
+  "version": "1.0",
+  "createdAt": "2026-10-13",
+  "user": {
+    "declaredCity": "上海",
+    "note": "用户主动说出的城市。null 表示未声明，走随机城市。"
+  },
+  "stats": {
+    "totalBoxes": 6,
+    "totalSpend": 0,
+    "lastOpenAt": "2026-10-19T22:14:38"
+  },
+  "collection": {
+    "openedItems": {
+      "9900016075": 1,
+      "521914": 1,
+      "9900015008": 1,
+      "521770": 1,
+      "9900016073": 1,
+      "9900016371": 1,
+      "9900005456": 1,
+      "521901": 1
+    },
+    "rarityTier": {
+      "9900016075": "初次邂逅",
+      "521914": "初次邂逅",
+      "9900015008": "初次邂逅",
+      "521770": "初次邂逅",
+      "9900016073": "初次邂逅",
+      "9900016371": "初次邂逅",
+      "9900005456": "初次邂逅",
+      "521901": "初次邂逅"
+    }
+  },
+  "history": [
+    {
+      "ts": "2026-10-12T18:59:49",
+      "city": "成都",
+      "store": "3450069003",
+      "meals": ["9900016075", "521914"],
+      "campaign": "麦当劳联动G-DRAGON",
+      "ordered": false
+    },
+    {
+      "ts": "2026-10-12T20:48:38",
+      "city": "上海",
+      "store": "1450713",
+      "meals": ["9900015602", "521901"],
+      "campaign": "麦当劳联动G-DRAGON",
+      "ordered": false
+    },
+    {
+      "ts": "2026-10-12T22:11:52",
+      "city": "上海",
+      "store": "1450104",
+      "meals": ["9900005413", "9900015726"],
+      "campaign": "麦当劳联动G-DRAGON",
+      "ordered": false
+    },
+    {
+      "ts": "2026-10-13T11:25:35",
+      "city": "上海",
+      "store": "1450002",
+      "meals": ["9900015008", "521770"],
+      "campaign": "麦当劳X PEACEMINUSONE",
+      "ordered": false
+    }
+  ],
+  "preferences": {
+    "avoidMeals": [],
+    "favoriteMeals": [],
+    "dietaryRestrictions": null,
+    "flavorPreference": null
+  },
+  "streak": {
+    "current": 0,
+    "longest": 0,
+    "lastDate": "2026-10-13"
+  }
+}

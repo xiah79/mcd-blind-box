@@ -1,0 +1,16 @@
+node_modules/
+.env
+.env.local
+*.log
+.DS_Store
+
+# 绝不要提交真实凭证配置（本仓库只提供 mcp-config.example.json）
+mcp.json
+mcp.json.disabled
+mcp.json.bak
+
+# 本地诊断残留，不要提交
+_trash/
+
+# 本地发布工作笔记（不随仓库分发）
+PUBLISH_NOTES.md
