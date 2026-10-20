@@ -168,25 +168,29 @@ git remote set-url origin git@github.com:xiah79/mcd-blind-box.git
 
 ## 七、提交报名 Issue
 
-1. 进入麦当劳 GitHub 官方账号活动页面（`M-China` 组织的 `mcd-developer-innovation-challenge` 仓库）
-2. 找到 Issues → 新建 → 选择指定 Issue 模板
-3. 填写：
+✅ **已提交**：Issue **#928** — https://github.com/M-China/mcd-developer-innovation-challenge/issues/928
+（2026-10-20 提交，状态 Open，项目地址与简介已核对无误）
+
+<details>
+<summary>提交内容（备查）</summary>
 
 ```
-参赛申请
-项目名称：麦当劳随机盲盒
-项目地址：https://github.com/<你的用户名>/<仓库名>
-项目简介：把点餐变成收集游戏。有记忆的开盒体验——优先推没抽过的、
-          忌口硬排除、稀有档按可验证性分层；同时用四条铁律守住 AI
-          幻觉与写操作边界：绝不编造用户位置、扣积分/下单/领券一律
-          先确认、券只报实测口径不虚报资产、记忆只读不猜。
+项目地址：https://github.com/xiah79/mcd-blind-box
+
+项目简介：
+把点餐变成收集游戏。有记忆的开盒体验——优先推没抽过的、忌口硬排除、
+稀有档按可验证性分层；同时用四条铁律守住 AI 幻觉与写操作边界：
+绝不编造用户位置、扣积分/下单/领券一律先确认、券只报实测口径不虚报资产、
+记忆只读不猜。
 ```
 
-4. **10 月 25 日 23:59 前**提交
+</details>
+
+**截止时间**：2026-10-25 23:59（已提前 5 天完成）
 
 ---
 
-## 八、拿 Star：从提交到截止只剩 5 天
+## 八、拿 Star：截止前还剩 5 天
 
 排名 = GitHub 公开 Star 数，这是唯一可量化的指标。可做的事：
 
@@ -197,6 +201,10 @@ git remote set-url origin git@github.com:xiah79/mcd-blind-box.git
 | **Twitter/X + 掘金双发** | 程序员社区流量池 |
 | **社群分享** | MCP 相关开发者群、WorkBuddy 用户群 |
 | **写 Issue 记录 bug** | 给 `MCP_BUG_REPORT.md` 的 3 个问题提 Issue，让接口方和开发者看到你的项目 |
+
+> 物料已备好：`BLOG_ARTICLE.md`（6800 字完整版，仓库内已改为相对路径引用）与
+> `BLOG_SHORTS.md`（社区长贴 + 社交短贴模板）。对外发布时把短文里的
+> 2 处 `<在此粘贴你的仓库地址>` 换成 https://github.com/xiah79/mcd-blind-box 即可。
 
 ### 建议给 README 加的第一屏内容
 
