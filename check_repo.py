@@ -84,5 +84,67 @@ def main():
     return 0
 
 
+def check_issue(issue_no):
+    """校验报名 Issue 的格式是否符合官方要求"""
+    print(f"=== Issue #{issue_no} 格式校验 ===\n")
+    try:
+        d = fetch(f"https://api.github.com/repos/M-China/mcd-developer-innovation-challenge/issues/{issue_no}")
+    except Exception as e:
+        print(f"  [错误] 访问失败: {type(e).__name__} {str(e)[:120]}")
+        return 1
+
+    title = d.get("title", "")
+    body = d.get("body", "") or ""
+    state = d.get("state")
+    comments = d.get("comments", 0)
+
+    print(f"[1] 标题")
+    print(f"    内容: {title}")
+    ok_t = title.startswith("【参赛申请】")
+    print(f"    [{'OK  ' if ok_t else '错误'}] 以【参赛申请】开头")
+    print(f"    [{'OK  ' if '\n' not in title else '错误'}] 标题无换行")
+    print()
+
+    print("[2] 正文")
+    lines = body.split("\n")
+    for i, l in enumerate(lines, 1):
+        print(f"    {i}: {l[:70]}")
+    print()
+
+    print("[3] 逐项检查")
+    checks = [
+        ("首行是【参赛申请】", lines and lines[0].strip() == "【参赛申请】"),
+        ("有项目名称行", any(l.startswith("项目名称：") and len(l) > 5 for l in lines)),
+        ("项目名称与内容同行", any(l.startswith("项目名称：") and not l.rstrip().endswith("：") for l in lines)),
+        ("项目地址与内容同行", any(l.startswith("项目地址：") and "http" in l for l in lines)),
+        ("项目地址为裸 URL", "](http" not in body),
+        ("项目简介与内容同行", any(l.startswith("项目简介：") and len(l) > 8 for l in lines)),
+        ("简介无内部断行", sum(1 for l in lines if l.startswith("项目简介：")) == 1),
+        ("无 Markdown 加粗", "**" not in body),
+        ("无 Markdown 链接", "](" not in body),
+    ]
+    all_ok = True
+    for desc, passed in checks:
+        print(f"    [{'OK  ' if passed else '错误'}] {desc}")
+        if not passed:
+            all_ok = False
+    print()
+
+    print("[4] 状态")
+    print(f"    状态      : {state}")
+    print(f"    评论数    : {comments}")
+    if comments > 0:
+        print("    → 已有 bot 回复，刷新页面查看是「成功通知」还是「失败原因」")
+    else:
+        print("    → 暂无回复。#928 当时约 20 分钟后回复，请耐心等待")
+    print()
+
+    print("=" * 50)
+    print("格式校验:", "全部通过 ✅" if all_ok else "存在问题 ❌")
+    return 0 if all_ok else 1
+
+
 if __name__ == "__main__":
+    if len(sys.argv) > 2 and sys.argv[1] == "--issue":
+        sys.exit(check_issue(sys.argv[2]))
     sys.exit(main())
