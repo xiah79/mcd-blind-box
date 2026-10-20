@@ -108,39 +108,61 @@ python check_submission.py
 
 ## 六、发布到 GitHub
 
-⚠️ **本项目的 git 仓库已初始化完成**（分支 `main`，20 个文件已提交，commit `d01110a`）。你**只需要**做第 3、4 步：建远程仓库 + push。
+✅ **已完成推送**。仓库地址：https://github.com/xiah79/mcd-blind-box
+
+- 仓库可见性：**Public**
+- 分支：`main`，3 个提交，21 个文件
+- 远端凭证扫描：`Bearer` / `MCD_MCP_TOKEN` 均为**零命中**
+- 远端引用：仅 `refs/heads/main` 一个，**无隐藏的 PR 引用或旧分支**
+- reflog 无 `.env` 任何痕迹
+
+<details>
+<summary>环境配置记录（你本机遇到的两个坑，供参考）</summary>
+
+**坑 1 · SSL 证书劫持**
+
+本机装有 SteamTools 证书劫持工具，把 GitHub 证书重签为 `BeyondDimension SteamTools Certificate`。系统信任它（浏览器/Python 正常），但 git 的静态 CA bundle 里没有。
+
+修法（**不关闭任何校验**）：
 
 ```bash
-cd mcd-blind-box
-
-# 1. 【已完成】初始化 + 提交
-git init -b main          # ⚠️ 本机 git 2.28 默认分支是 master，必须显式 -b main
-git add .
-git commit -m "feat: mcd-blind-box 麦当劳随机盲盒 Skill"
-
-# 2. 【已完成】凭证体检
-git grep -I -n -E "Bearer [A-Za-z0-9_-]{16,}" HEAD   # 应无输出
-git ls-files                                            # 应无 .env
-
-# 3. 【待你做】关联远程并推送
-git remote add origin https://github.com/<你的用户名>/<仓库名>.git
-git push -u origin main
-
-# 4. 【待你做】提交报名 Issue（10-25 23:59 前）
+git config http.sslBackend schannel   # 改用 Windows 系统证书库
 ```
 
-### 创建公开仓库
+已设为**仓库级**配置（写在 `.git/config`，不影响其他项目，不进版本库）。
 
-在 GitHub 新建仓库时：
-- ✅ 选 **Public**（排名看的是公开 Star）
-- ❌ **不要**勾选 "Add a .gitignore" 或 "Add a README" —— 会有冲突，push 时报错
-- ❌ **不要**勾选 License 初始化 —— 我们的 `CONTEST_DECLARATION.md` 里已声明 MIT
+> 系统里有两张 SteamTools 证书：一张已于 2026/3/19 过期，一张有效期到 2027/1/13。schannel 会自动选对的那张。
+
+**坑 2 · GitHub 禁用密码推送 + 22 端口被封**
+
+- GitHub 自 2021-08 起彻底关闭密码推送，只接受 PAT 或 SSH
+- 你公司网络封了 SSH 22 端口（`Connection refused`），但 443 通
+
+最终方案：**SSH over 443**
+
+```bash
+# ~/.ssh/config
+Host github.com
+    HostName ssh.github.com
+    Port 443
+    User git
+    IdentityFile ~/.ssh/id_ed25519_github
+    IdentitiesOnly yes
+
+git remote set-url origin git@github.com:xiah79/mcd-blind-box.git
+```
+
+密钥对已生成于 `C:\Users\hp\.ssh\id_ed25519_github`，公钥已添加到 GitHub 账号。
+
+> 相比 PAT 的优势：私钥永不上传、永久有效、撤销只需删掉那把 key。
+
+</details>
 
 ### 仓库设置建议
 
-- **Description**：`M-CODE 麦当劳程序员创意开发大赛参赛作品 · 有记忆的随机盲盒 Skill`
-- **Topics**：`mcd-blind-box` `workbuddy` `mcp` `skill` `mcd-code`（利于被搜到）
-- **License**：MIT（可在网页端添加，不影响已有文件）
+- ✅ 可见性：Public
+- **Description**：`M-CODE 麦当劳程序员创意开发大赛参赛作品 · 有记忆的随机盲盒 Skill`（已填）
+- **Topics**（可在网页端添加）：`mcd-blind-box` `workbuddy` `mcp` `skill` `mcd-code` —— 利于被搜索到
 
 ---
 
