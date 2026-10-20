@@ -108,34 +108,39 @@ python check_submission.py
 
 ## 六、发布到 GitHub
 
+⚠️ **本项目的 git 仓库已初始化完成**（分支 `main`，20 个文件已提交，commit `d01110a`）。你**只需要**做第 3、4 步：建远程仓库 + push。
+
 ```bash
 cd mcd-blind-box
 
-# 1. 初始化
-git init
+# 1. 【已完成】初始化 + 提交
+git init -b main          # ⚠️ 本机 git 2.28 默认分支是 master，必须显式 -b main
 git add .
-git status                    # ← 关键：确认列表里没有 .env
-
-# 2. 提交
 git commit -m "feat: mcd-blind-box 麦当劳随机盲盒 Skill"
 
-# 3. 关联你的公开仓库
+# 2. 【已完成】凭证体检
+git grep -I -n -E "Bearer [A-Za-z0-9_-]{16,}" HEAD   # 应无输出
+git ls-files                                            # 应无 .env
+
+# 3. 【待你做】关联远程并推送
 git remote add origin https://github.com/<你的用户名>/<仓库名>.git
 git push -u origin main
+
+# 4. 【待你做】提交报名 Issue（10-25 23:59 前）
 ```
 
 ### 创建公开仓库
 
 在 GitHub 新建仓库时：
 - ✅ 选 **Public**（排名看的是公开 Star）
-- ✅ 勾选 README/LICENSE 等初始化项（会覆盖的话再 push 一次即可）
-- ❌ **不要**勾选 "Add a .gitignore" 时选 Python 模板（会覆盖我们的规则）
+- ❌ **不要**勾选 "Add a .gitignore" 或 "Add a README" —— 会有冲突，push 时报错
+- ❌ **不要**勾选 License 初始化 —— 我们的 `CONTEST_DECLARATION.md` 里已声明 MIT
 
 ### 仓库设置建议
 
-- **License**：MIT（参赛声明里已写明）
 - **Description**：`M-CODE 麦当劳程序员创意开发大赛参赛作品 · 有记忆的随机盲盒 Skill`
 - **Topics**：`mcd-blind-box` `workbuddy` `mcp` `skill` `mcd-code`（利于被搜到）
+- **License**：MIT（可在网页端添加，不影响已有文件）
 
 ---
 
